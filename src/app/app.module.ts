@@ -12,6 +12,10 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SeatSelectorComponent } from './seat-selector/seat-selector.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     SearchbarComponent,
     MovieDetailsComponent,
     SeatSelectorComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    HttpClientModule,
   ],
   imports: [
     BrowserModule
