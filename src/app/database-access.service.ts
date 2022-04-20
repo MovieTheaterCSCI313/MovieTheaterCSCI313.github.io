@@ -14,7 +14,7 @@ export class DatabaseAccessService {
   getMovies() {
     return this.http
       .get<Movie[]>(
-        'https://studentdataclass-default-rtdb.firebaseio.com/' + 'student.json'
+        'https://studentdataclass-default-rtdb.firebaseio.com/' + 'movies.json'
       )
       .pipe(
         map((responseData) => {
