@@ -28,10 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
     MovieDetailsComponent,
     SeatSelectorComponent,
     CheckoutComponent,
-    HttpClientModule,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
