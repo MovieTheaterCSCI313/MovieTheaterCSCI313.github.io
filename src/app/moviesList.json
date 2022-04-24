@@ -11,7 +11,13 @@
             "genre": "action",
             "rating": "M",
             "description": "He's like a vampire or something I think?"
-        }
+        },
+      {
+        "name" : "Sonic",
+        "genre": "Action/Comdedy",
+        "rating": "PG",
+        "description": "He is the fast blue hedge boi. He consumes the CHILI DOG",
+      }
 
     ]
 }
