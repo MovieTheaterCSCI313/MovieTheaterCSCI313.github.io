@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ComponentsService } from '../components.service'; //Get component service
+import { Movie } from '../movie'; //Get the movie interface
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private comSerrvice: ComponentsService
 
+  ) { }
+  
+ 
   ngOnInit(): void {
+
   }
 
 }
