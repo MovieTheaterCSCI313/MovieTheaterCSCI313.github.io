@@ -1,2 +1,6 @@
 <p>main-page works!</p>
 <app-nav-bar></app-nav-bar>
+<app-movie-card
+    *ngFor = "let mov of MoviesList;"
+    [mov] = "mov"
+></app-movie-card>

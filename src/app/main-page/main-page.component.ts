@@ -9,12 +9,10 @@ import { Movie } from '../movie'; //Get the movie interface
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(
-    private comSerrvice: ComponentsService
-
-  ) { }
+  constructor( private comSerrvice: ComponentsService  ) { }
   
- 
+  MoviesList: Movie[] = this.comSerrvice.getMovies();
+  
   ngOnInit(): void {
 
   }

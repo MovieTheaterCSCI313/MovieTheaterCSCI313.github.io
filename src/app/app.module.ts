@@ -13,7 +13,9 @@ import { SeatSelectorComponent } from './seat-selector/seat-selector.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+    NoopAnimationsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

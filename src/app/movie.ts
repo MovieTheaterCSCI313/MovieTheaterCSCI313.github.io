@@ -4,6 +4,6 @@ export interface Movie{
     genre: string;
     rating: string;
     description: string;
-  
+    imageSrc?: string;
   }
   

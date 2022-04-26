@@ -1,1 +1,10 @@
-<p>movie-card works!</p>
+<div class="container">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{mov.name}}</mat-card-title>
+        </mat-card-header>
+        
+        <img mat-card-image src="{{mov.imageSrc}}" alt="Movie Poster for {{mov.name}}">
+      </mat-card>
+</div>
