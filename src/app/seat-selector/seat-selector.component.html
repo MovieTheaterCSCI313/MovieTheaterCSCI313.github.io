@@ -1,2 +1,14 @@
-<p>seat-selector works!</p>
+<mat-table>
+    
+</mat-table>
+<table>
+    <th>Seats</th>
+    <tr *ngFor="let row of rows; let r = index; ">
+        <td *ngFor="let seat of seats; let s = index">
+            <button disabled="" (onClick)="selectSeat(r,s)" type="button">{{r}}{{s}}</button>
+        </td>
+ 
+    </tr>
+</table>
+<p></p>
 <app-checkout></app-checkout>
