@@ -12,7 +12,8 @@ export class moviesList{
             name: "Morbious",
             genre: "Action/Adventure",
             rating: "M",
-            description: "He's like a vampire or something I think?"
+            description: "He's like a vampire or something I think?",
+            imageSrc: "/assets/images/Morbius.jpg"
         },
         {
             name : "Sanic",
