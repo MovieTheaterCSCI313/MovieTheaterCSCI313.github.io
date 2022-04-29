@@ -16,5 +16,12 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  showList: boolean = false;
+  showMoviesTest(){
+    this.showList = !this.showList;
+  }
 
+  toggleView(newView: string){
+    this.comSerrvice.changeCurrentView(newView)
+  }
 }

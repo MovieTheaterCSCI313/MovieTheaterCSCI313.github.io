@@ -1,6 +1,5 @@
 import { Movie } from "../movie";
-export class moviesList{
-    movies: Movie[] =[
+export const movies: Movie[] =[
         {
             name: "Spider-Man: No Home",
             genre: "action",
@@ -19,7 +18,8 @@ export class moviesList{
             name : "Sanic",
             genre: "Action/Comdedy",
             rating: "PG",
-            description: "He is the fast blue hedge boi. He consumes the CHILI DOG"
+            description: "He is the fast blue hedge boi. He consumes the CHILI DOG",
+            imageSrc: "/assets/images/Sanic.jpg"
         },
         {
             name: "The bat, man",
@@ -28,8 +28,3 @@ export class moviesList{
             description: "There is a man who bats around with this bat powers. Riddle question time."
         }
       ]
-
-    
-
-
-}
