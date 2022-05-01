@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { movies } from './data/moviesList';
+import { showTimes } from './data/showtimes';
 //import { Movie } from './movie';
 import { Subject } from 'rxjs';
 
@@ -13,7 +14,9 @@ export class ComponentsService {
   getMovies(){
     return movies;
   }
-
+  getShowTimes(){
+    return showTimes;
+  }
   //Creating value to store the current view to display, ensure it can be subscribed to
   viewChange: Subject<any> = new Subject<any>();
   currentView: string = "";

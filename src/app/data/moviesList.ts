@@ -25,6 +25,26 @@ export const movies: Movie[] =[
             name: "The bat, man",
             genre: "Action/Adventure",
             rating: "PG-13",
-            description: "There is a man who bats around with this bat powers. Riddle question time."
-        }
+            description: "There is a man who bats around with this bat powers. Riddle question time.",
+            imageSrc: "/assets/images/Batman.jpg"
+        },
+        // {
+        //     name: "",
+        //     genre: "",
+        //     rating: "",
+        //     description: ""
+        // },
+        // {
+        //     name: "",
+        //     genre: "",
+        //     rating: "",
+        //     description: ""
+        // },
+        // {
+        //     name: "",
+        //     genre: "",
+        //     rating: "",
+        //     description: ""
+        // },
+        
       ]
