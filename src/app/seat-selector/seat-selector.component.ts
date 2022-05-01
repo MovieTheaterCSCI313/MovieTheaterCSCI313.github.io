@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTable, MatTableDataSource,MatTableModule } from '@angular/material/table';
+import { Seat } from '../seat';
+import { Seats } from '../seats';
 
 @Component({
   selector: 'app-seat-selector',
@@ -12,25 +13,36 @@ export class SeatSelectorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  seatList: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
-  seatAvailabilityList: boolean[] = [];
-  rows: number[] = [1,2,3,4,5];
-  seats: number[] = [1,2,3,4,5];
-  //temp storage seat selection array
-  tss: number[] = [];
-  selectSeat(rowNumber: number, seatNumber: number): number{
+  //data source for table
+  seatList: Seat[] = Seats;
 
-    
-    return  seatNumber;
+  //temp storage for seat selection
+  seatSelection: Seat[] = [];
+  //adds seat to seatSelection array ---untested
+  selectSeat(seat: Seat): void{
+    this.seatSelection.push(seat);
   }
-  //needs implementation
-  seatTaken(rowNumber: number, seatNumber: number): boolean{
-    
+  //removes seat from seatSelection array ---untested
+  deselectSeat(seat: Seat): void {
+    if (this.seatSelection.length == 1) {
+      this.seatSelection.splice(0, 1);
+      return;
+    }
+    for(var i : number = 0; i <= this.seatSelection.length; i++) {
+      if (seat.row == this.seatSelection[i].row && seat.seatNumber == this.seatSelection[i].seatNumber)
+        this.seatSelection.splice(i, 1);
+        break;
+    }
+  }
+  //clears all seat selections
+  clearSeatSelections(): void{
+    this.seatSelection = [];
+  }
 
-    return true;
-  }
-  //will return an array of taken seats and for storage, needs implementation
-  seatAvailability(){
+
+
+  //will return an array of seats availablility in order, needs implementation from service
+  seatAvailabilityCheck(): void{
 
   }
   

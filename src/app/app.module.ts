@@ -18,6 +18,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 
 import { MatTableModule } from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatTableModule } from '@angular/material/table';
     NoopAnimationsModule,
     MatCardModule,
     MatTableModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

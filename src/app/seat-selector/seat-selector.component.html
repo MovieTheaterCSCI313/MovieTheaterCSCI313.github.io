@@ -1,14 +1,7 @@
-<mat-table>
-    
-</mat-table>
-<table>
-    <th>Seats</th>
-    <tr *ngFor="let row of rows; let r = index; ">
-        <td *ngFor="let seat of seats; let s = index">
-            <button disabled="" (onClick)="selectSeat(r,s)" type="button">{{r}}{{s}}</button>
-        </td>
- 
-    </tr>
-</table>
-<p></p>
+<div id="seatGrid">
+<mat-grid-list cols="6" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let seat of seatList">{{seat.row}} - {{seat.seatNumber}}</mat-grid-tile>
+  
+</mat-grid-list>
+</div>
 <app-checkout></app-checkout>

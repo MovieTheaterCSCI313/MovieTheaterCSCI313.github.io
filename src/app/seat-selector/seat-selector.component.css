@@ -1,0 +1,9 @@
+#seatGrid {
+    width: 50%;
+    border: black solid 10px;
+}
+.mat-grid-tile {
+    color: red;
+    background-color: rgb(140, 235, 140);
+    border: black dashed 2px;
+}
