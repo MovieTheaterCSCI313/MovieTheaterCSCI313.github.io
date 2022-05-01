@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatCardModule} from '@angular/material/card';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatCardModule} from '@angular/material/card';
     MovieDetailsComponent,
     SeatSelectorComponent,
     CheckoutComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
