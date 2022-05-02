@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { showtime } from 'src/showtime';
+import { ComponentsService } from '../components.service'; //Get component service
 
 @Component({
   selector: 'app-seat-selector',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seat-selector.component.css']
 })
 export class SeatSelectorComponent implements OnInit {
-
-  constructor() { }
+  @Input() showtime!: showtime;
+  readyForCheckout: boolean = false;
+  constructor( private comSerrvice: ComponentsService ) { }
 
   ngOnInit(): void {
+  }
+  toggleView(newView: string){
+   this.comSerrvice.changeCurrentView(newView); 
   }
 
 }

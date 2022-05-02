@@ -1,2 +1,5 @@
-<p>movie-details works!</p>
-<button (click)="toggleView('seatSelector')">Continue to seat Selector</button>
+<h1>Showing info for movie {{movieToShow.name}}</h1>
+<h2>The following showtimes are available:</h2>
+<p *ngFor= "let sTime of correctShowtimes" (click)="toggleView('seatSelector', sTime)">{{sTime.time}} on {{sTime.date}}</p>
+
+
