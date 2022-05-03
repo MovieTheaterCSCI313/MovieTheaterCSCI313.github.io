@@ -1,4 +1,8 @@
-<p>theater works!</p>
+
+<div>
+    <button (click)="tempMakeDatabase()">Make the Database thign happen. Cool</button>
+</div>
+
 <app-main-page *ngIf = "isCurrentView('mainPage')"></app-main-page>
 <app-movie-search *ngIf = "isCurrentView('movieSearch')"></app-movie-search>
 <app-movie-details *ngIf = "isCurrentView('movieDetails')"></app-movie-details>

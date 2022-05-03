@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { showtime } from 'src/showtime';
 import { ComponentsService } from '../components.service'; //Get component service
+import { DatabaseAccessService } from '../database-access.service';
+
+import { showTimes } from '../data/showtimes';
+
 
 
 @Component({
@@ -10,7 +14,10 @@ import { ComponentsService } from '../components.service'; //Get component servi
 })
 export class TheaterComponent implements OnInit {
 
-  constructor( private comSerrvice: ComponentsService ) { }
+  constructor( 
+    private comSerrvice: ComponentsService,
+    private dataSerrvice: DatabaseAccessService 
+    ) { }
 
   currentView: string = '';
 
@@ -24,6 +31,14 @@ export class TheaterComponent implements OnInit {
 
     this.comSerrvice.showTimeChange.subscribe(value => this.importantShowtime = value);
      
+
+
+    //Delete this for loop later
+    for (let i =0; i < 25; i ++){
+      this.emptySeats.push(true);
+    }
+    this.showTimesArray = this.comSerrvice.getShowTimes();
+    console.log("SEats are " + this.emptySeats.length);
   }
 
   isCurrentView(check: string){
@@ -31,6 +46,18 @@ export class TheaterComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+
+
+  //Create array of 25 boolean values //(number of seats in theather.)
+  emptySeats: boolean[] = [];
+  showTimesArray: any[] = [];
+
+  tempMakeDatabase(){
+    for (let i = 0; i < this.showTimesArray.length; i ++){
+      this.dataSerrvice.addSeats(i, this.emptySeats).subscribe();
+    }
   }
 
 
