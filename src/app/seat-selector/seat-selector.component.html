@@ -1,5 +1,5 @@
 <div id="seatGrid">
-<mat-grid-list cols="" rowHeight="1:1">
+<mat-grid-list cols="6" rowHeight="1:1">
   <mat-grid-tile *ngFor="let seat of seatList">
     <button type="button" (onClick)="selectSeat(seat)">{{seat.row}} - {{seat.seatNumber}}</button>
     
