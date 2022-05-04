@@ -1,13 +1,11 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #2196F3;
+
+#seatGrid {
+    width: 50%;
+    border: black solid 10px;
+}
+.mat-grid-tile {
+    color: red;
+    background-color: rgb(140, 235, 140);
+    border: black dashed 2px;
     padding: 10px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-  }
+}

@@ -18,6 +18,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { GreenGooComponent } from './green-goo/green-goo.component';
 
+import { MatTableModule } from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { GreenGooComponent } from './green-goo/green-goo.component';
     HttpClientModule,
     NoopAnimationsModule,
     MatCardModule,
+    MatTableModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
