@@ -1,6 +1,12 @@
 <p>main-page works!</p>
 <app-nav-bar></app-nav-bar>
-<app-movie-card
-    *ngFor = "let mov of MoviesList;"
-    [mov] = "mov"
-></app-movie-card>
+<div>
+    <button (click)="showMoviesTest()">Show Movies</button>
+</div>
+<div *ngIf = showList>
+    <app-movie-card
+        *ngFor = "let mov of MoviesList;"
+        [mov] = "mov"
+        (click) = "toggleView('movieDetails', mov)"
+    ></app-movie-card>
+</div>

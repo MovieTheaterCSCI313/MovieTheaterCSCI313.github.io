@@ -1,4 +1,6 @@
+
 <div id="seatGrid">
+<h4>The showtime is {{showtime.date}} at {{showtime.time}}</h4>
 <mat-grid-list cols="6" rowHeight="1:1">
   <mat-grid-tile *ngFor="let seat of seatList">
     <button type="button" (onClick)="selectSeat(seat)">{{seat.row}} - {{seat.seatNumber}}</button>
@@ -11,4 +13,6 @@
   
 </div>
 </div>
-<app-checkout></app-checkout>
+<div>
+    <button (click)="toggleView('checkout')">Continue to Checkout</button>
+</div>

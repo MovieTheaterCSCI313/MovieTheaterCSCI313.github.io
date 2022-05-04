@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, Input } from '@angular/core';
+import { showtime } from 'src/showtime';
+import { ComponentsService } from '../components.service'; //Get component service
 import { Seat } from '../seat';
 import { Seats } from '../seats';
 
@@ -8,11 +11,16 @@ import { Seats } from '../seats';
   styleUrls: ['./seat-selector.component.css']
 })
 export class SeatSelectorComponent implements OnInit {
+  @Input() showtime!: showtime;
 
-  constructor() { }
+  
+  constructor( private comSerrvice: ComponentsService ) { }
+
 
   ngOnInit(): void {
+
     //get array of booleans and overwite the seat array, from service
+
   }
   //data source for table
   seatList: Seat[] = Seats;
@@ -61,4 +69,10 @@ export class SeatSelectorComponent implements OnInit {
 
   
 
+  
+  toggleView(newView: string){
+
+
+   this.comSerrvice.changeCurrentView(newView, undefined, undefined /*,array */); 
+  }
 }

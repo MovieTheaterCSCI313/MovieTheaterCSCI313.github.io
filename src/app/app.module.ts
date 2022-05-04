@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatCardModule} from '@angular/material/card';
+import { GreenGooComponent } from './green-goo/green-goo.component';
 
 import { MatTableModule } from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -32,6 +33,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MovieDetailsComponent,
     SeatSelectorComponent,
     CheckoutComponent,
+    GreenGooComponent,
   ],
   imports: [
     BrowserModule,
