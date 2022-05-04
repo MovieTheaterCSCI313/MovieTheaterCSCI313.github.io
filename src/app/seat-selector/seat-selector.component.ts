@@ -12,6 +12,7 @@ export class SeatSelectorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //get array of booleans and overwite the seat array, from service
   }
   //data source for table
   seatList: Seat[] = Seats;
@@ -34,16 +35,27 @@ export class SeatSelectorComponent implements OnInit {
         break;
     }
   }
+  //called by button onClick method
+  seatSelectionToggle(seat: Seat):void{
+    if (this.seatSelection.length == 0)
+      this.selectSeat(seat);
+    else if (this.seatSelection.includes(seat))
+      this.deselectSeat(seat);
+    else 
+      this.selectSeat(seat);
+
+  }
   //clears all seat selections
   clearSeatSelections(): void{
     this.seatSelection = [];
   }
+ 
 
 
 
   //will return an array of seats availablility in order, needs implementation from service
   seatAvailabilityCheck(): void{
-
+    //pass aray to db service
   }
   
 

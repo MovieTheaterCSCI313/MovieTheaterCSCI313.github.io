@@ -1,7 +1,14 @@
 <div id="seatGrid">
-<mat-grid-list cols="6" rowHeight="1:1">
-  <mat-grid-tile *ngFor="let seat of seatList">{{seat.row}} - {{seat.seatNumber}}</mat-grid-tile>
+<mat-grid-list cols="" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let seat of seatList">
+    <button type="button" (onClick)="selectSeat(seat)">{{seat.row}} - {{seat.seatNumber}}</button>
+    
+  </mat-grid-tile>
   
 </mat-grid-list>
+
+<div *ngFor="">
+  
+</div>
 </div>
 <app-checkout></app-checkout>
