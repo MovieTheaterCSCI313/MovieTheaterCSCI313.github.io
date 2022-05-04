@@ -22,7 +22,7 @@ export class TheaterComponent implements OnInit {
   currentView: string = '';
 
   importantShowtime!: showtime;
-
+  tempBool: boolean = true; //Detle this 
   ngOnInit(): void {
     //Assing the viewChange value to local currentView String
     this.comSerrvice.viewChange.subscribe(value => this.currentView = value); 
@@ -34,8 +34,9 @@ export class TheaterComponent implements OnInit {
 
 
     //Delete this for loop later
+
     for (let i =0; i < 25; i ++){
-      this.emptySeats.push(true);
+      this.emptySeats.push(this.tempBool);
     }
     this.showTimesArray = this.comSerrvice.getShowTimes();
     console.log("SEats are " + this.emptySeats.length);

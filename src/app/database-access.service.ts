@@ -8,24 +8,31 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DatabaseAccessService {
-
+  
   constructor(private http: HttpClient) { }
 
-  // getMovies() {
-  //   return this.http
-  //     .get<Movie[]>(
-  //       'https://studentdataclass-default-rtdb.firebaseio.com/' + 'movies.json'
-  //     )
-  //     .pipe(
-  //       map((responseData) => {
-  //         const studentArray: Movie[] = [];
-  //         for (const key in responseData) {
-  //           studentArray.push(responseData[key]);
-  //         }
-  //         return studentArray;
-  //       })
-  //     );
-  // }
+  //Returns an array of booleans associated with a showtime
+  //based on the inputed id of that showtime.
+  //Booleans represent seat availability.
+  //True = Available
+  //False = Unavailable.
+  tempJson: string = '';
+  getSeatAvailablity(id: string) {
+    this.tempJson = id +".json"
+    return this.http
+      .get<boolean[]>(
+        'https://studentdataclass-default-rtdb.firebaseio.com/' + this.tempJson
+      )
+      .pipe(
+        map((responseData) => {
+          const studentArray: boolean[] = [];
+          for (const key in responseData) {
+            studentArray.push(responseData[key]);
+          }
+          return studentArray;
+        })
+      );
+  }
 
 
 
