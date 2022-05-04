@@ -7,4 +7,4 @@
 <app-movie-search *ngIf = "isCurrentView('movieSearch')"></app-movie-search>
 <app-movie-details *ngIf = "isCurrentView('movieDetails')"></app-movie-details>
 <app-seat-selector *ngIf = "isCurrentView('seatSelector')" [showtime]="importantShowtime" ></app-seat-selector>
-<app-checkout *ngIf="isCurrentView('checkout')"></app-checkout>
+<app-checkout *ngIf="isCurrentView('checkout')" [seats]="seatsArray"></app-checkout>

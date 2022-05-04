@@ -28,21 +28,26 @@ export class ComponentsService {
   showTimeChange: Subject<any> = new Subject<any>();
   showTimeOfInterest!: any;
 
-  changeCurrentView(newView: string, impMovie?: Movie, impShowTime?: showtime){
+  seatsArray: number[] = [];
+  seatsChange: Subject<any> = new Subject<any>();
+
+  changeCurrentView(newView: string, impMovie?: Movie, impShowTime?: showtime, seats?: number[]){
     this.currentView = newView;
     this.viewChange.next(this.currentView)
 
     if(typeof impMovie !== "undefined"){ 
       this.movieOfInterest = impMovie;
-
     }
     if(typeof impShowTime !== "undefined"){ 
-
       this.showTimeOfInterest = impShowTime;
       this.showTimeChange.next(this.showTimeOfInterest)
-
+    }
+    if(typeof seats !== "undefined"){ 
+      console.log("In service. Size is " + seats.length )
+      this.seatsArray = seats;
     }
   }
+  
   constructor() {
     
     this.viewChange.subscribe((value) => {
@@ -50,6 +55,9 @@ export class ComponentsService {
     });
     this.showTimeChange.subscribe((value) => {
       this.showTimeOfInterest = value
+    });
+    this.seatsChange.subscribe((value) => {
+      this.seatsArray = value
     });
   }
 

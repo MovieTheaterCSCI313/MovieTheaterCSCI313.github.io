@@ -17,7 +17,7 @@ export class DatabaseAccessService {
   //True = Available
   //False = Unavailable.
   tempJson: string = '';
-  getSeatAvailablity(id: string) {
+  getSeatAvailablity(id: number) {
     this.tempJson = id +".json"
     return this.http
       .get<boolean[]>(

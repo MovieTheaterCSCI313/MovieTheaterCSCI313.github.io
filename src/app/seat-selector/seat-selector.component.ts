@@ -1,3 +1,4 @@
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
 import { Component, OnInit, Input } from '@angular/core';
 import { showtime } from 'src/showtime';
 import { ComponentsService } from '../components.service'; //Get component service
@@ -9,13 +10,19 @@ import { ComponentsService } from '../components.service'; //Get component servi
 })
 export class SeatSelectorComponent implements OnInit {
   @Input() showtime!: showtime;
-  readyForCheckout: boolean = false;
+
+  
   constructor( private comSerrvice: ComponentsService ) { }
 
+
   ngOnInit(): void {
-  }
-  toggleView(newView: string){
-   this.comSerrvice.changeCurrentView(newView); 
+   
   }
 
+  
+  toggleView(newView: string){
+
+
+   this.comSerrvice.changeCurrentView(newView, undefined, undefined /*,array */); 
+  }
 }
