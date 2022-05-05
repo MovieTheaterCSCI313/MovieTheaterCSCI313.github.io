@@ -65,14 +65,9 @@ export class SeatSelectorComponent implements OnInit {
   seatAvailabilityCheck(): void{
     //pass aray to db service
   }
-  
 
-  
-
-  
+  tempNum: number[] = [7, 2, 15, 27, 111]; //For testing to make sure values arrive in checkout component
   toggleView(newView: string){
-
-
-   this.comSerrvice.changeCurrentView(newView, undefined, undefined /*,array */); 
+   this.comSerrvice.changeCurrentView(newView, undefined, undefined, this.tempNum); 
   }
 }

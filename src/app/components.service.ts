@@ -45,6 +45,7 @@ export class ComponentsService {
     if(typeof seats !== "undefined"){ 
       console.log("In service. Size is " + seats.length )
       this.seatsArray = seats;
+      this.seatsChange.next(this.seatsArray)
     }
   }
   
