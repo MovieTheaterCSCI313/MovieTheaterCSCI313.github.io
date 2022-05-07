@@ -2,6 +2,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { showtime } from 'src/showtime';
 import { ComponentsService } from '../components.service'; //Get component service
+import { DatabaseAccessService } from '../database-access.service';
 import { Seat } from '../seat';
 import { Seats } from '../seats';
 
@@ -13,15 +14,31 @@ import { Seats } from '../seats';
 export class SeatSelectorComponent implements OnInit {
   @Input() showtime!: showtime;
 
-  
-  constructor( private comSerrvice: ComponentsService ) { }
 
+
+  constructor( 
+    private comSerrvice: ComponentsService ,
+    private dbSerrvice: DatabaseAccessService
+    
+    ) { }
+    
+  seatsAvail: boolean[] = [];
 
   ngOnInit(): void {
 
     //get array of booleans and overwite the seat array, from service
-
+    this.fetchData(0);
+    console.log( typeof this.seatsAvail[2] )
+    //this.seatAvailabilityCheck();
   }
+  fetchData(num: number) {
+    this.dbSerrvice.getSeatAvailablity(num).subscribe((data) => {
+      this.seatsAvail = data;
+    });
+  }
+
+ 
+
   //data source for table
   seatList: Seat[] = Seats;
 
@@ -33,16 +50,15 @@ export class SeatSelectorComponent implements OnInit {
   }
   //removes seat from seatSelection array ---untested
   deselectSeat(seat: Seat): void {
-    if (this.seatSelection.length == 1) {
-      this.seatSelection.splice(0, 1);
-      return;
-    }
-    for(var i : number = 0; i <= this.seatSelection.length; i++) {
-      if (seat.row == this.seatSelection[i].row && seat.seatNumber == this.seatSelection[i].seatNumber)
+    for(let i = 0; i < this.seatSelection.length; i++) {
+      
+      if (seat.row === this.seatSelection[i].row && seat.seatNumber == this.seatSelection[i].seatNumber){
         this.seatSelection.splice(i, 1);
         break;
+      }
     }
   }
+
   //called by button onClick method
   seatSelectionToggle(seat: Seat):void{
     if (this.seatSelection.length == 0)
@@ -64,10 +80,18 @@ export class SeatSelectorComponent implements OnInit {
   //will return an array of seats availablility in order, needs implementation from service
   seatAvailabilityCheck(): void{
     //pass aray to db service
+    for (let i = 0; i < this.seatList.length; i++){
+      this.seatList[i].available = this.seatsAvail[i];
+    }
+
   }
 
-  tempNum: number[] = [7, 2, 15, 27, 111]; //For testing to make sure values arrive in checkout component
+  seatIndex: number[] = [];
   toggleView(newView: string){
-   this.comSerrvice.changeCurrentView(newView, undefined, undefined, this.tempNum); 
-  }
+    for (let i =0; i < this.seatSelection.length; i ++){
+      this.seatIndex.push(this.seatList.indexOf(this.seatSelection[i]))
+    }
+
+   this.comSerrvice.changeCurrentView(newView, undefined, undefined, this.seatIndex); 
+  } 
 }

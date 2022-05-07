@@ -3,16 +3,27 @@
 <h4>The showtime is {{showtime.date}} at {{showtime.time}}</h4>
 <mat-grid-list cols="6" rowHeight="1:1">
   <mat-grid-tile *ngFor="let seat of seatList">
-    <button type="button" (onClick)="selectSeat(seat)">{{seat.row}} - {{seat.seatNumber}}</button>
+    <button [ngClass]="!seat.available ? 'test': ''" type="button" (click)="seatSelectionToggle(seat)">{{seat.row}} - {{seat.seatNumber}}</button>
     
   </mat-grid-tile>
   
 </mat-grid-list>
+</div>
+<br>
+<br>
 
-<div *ngFor="">
-  
+
+<div *ngIf="seatSelection.length != 0">
+  <h3>Current Selection: </h3>
+  <p *ngFor="let s of seatSelection">
+    {{s.row}} {{s.seatNumber}}
+  </p>
 </div>
+<div *ngFor="let b of seatList">
+  Test
+  {{b.available}}
 </div>
+
 <div>
     <button (click)="toggleView('checkout')">Continue to Checkout</button>
 </div>

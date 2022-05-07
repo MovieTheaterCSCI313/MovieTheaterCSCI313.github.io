@@ -41,7 +41,7 @@ export class TheaterComponent implements OnInit {
       this.emptySeats.push(this.tempBool);
     }
     this.showTimesArray = this.comSerrvice.getShowTimes();
-    console.log("SEats are " + this.emptySeats.length);
+  
   }
 
   isCurrentView(check: string){
@@ -57,11 +57,11 @@ export class TheaterComponent implements OnInit {
   emptySeats: boolean[] = [];
   showTimesArray: any[] = [];
 
-  tempMakeDatabase(){
-    for (let i = 0; i < this.showTimesArray.length; i ++){
-      this.dataSerrvice.addSeats(i, this.emptySeats).subscribe();
-    }
-  }
+  // tempMakeDatabase(){
+  //   for (let i = 0; i < this.showTimesArray.length; i ++){
+  //     this.dataSerrvice.addSeats(i, this.emptySeats).subscribe();
+  //   }
+  // }
 
 
 }
