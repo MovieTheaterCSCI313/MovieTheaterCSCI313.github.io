@@ -9,3 +9,8 @@
     border: black dashed 2px;
     padding: 10px;
 }
+
+.test{
+    color: blue;
+    font-style: italic;
+}

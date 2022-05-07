@@ -18,14 +18,30 @@ export class DatabaseAccessService {
   //False = Unavailable.
   tempJson: string = '';
   getSeatAvailablity(id: number) {
-    this.tempJson = id +".json"
+    this.tempJson = " " +id +".json"
     return this.http
       .get<boolean[]>(
-        'https://studentdataclass-default-rtdb.firebaseio.com/' + this.tempJson
+        'https://movietheaterdatabase-default-rtdb.firebaseio.com/' + this.tempJson
       )
       .pipe(
         map((responseData) => {
-          const studentArray: boolean[] = [];
+          const boolArray: boolean[] = [];
+          for (const key in responseData) {
+            boolArray.push(responseData[key]);
+          }
+          return boolArray;
+        })
+      );
+  }
+
+  getStudents() {
+    return this.http
+      .get<any[]>(
+        'https://studentdataclass-default-rtdb.firebaseio.com/' + 'student.json'
+      )
+      .pipe(
+        map((responseData) => {
+          const studentArray: any[] = [];
           for (const key in responseData) {
             studentArray.push(responseData[key]);
           }
@@ -42,13 +58,13 @@ export class DatabaseAccessService {
   //Temporary method to fill database. Can delete this Mmethod when ready to submit
   //*************************************************************
   //*************************************************************
-  jsonName: string = '';
-  addSeats(index: number, booleans: boolean[]) {
-    this.jsonName = index.toString() + '.json'
-    return this.http.put(
-      'https://movietheaterdatabase-default-rtdb.firebaseio.com/ '+ this.jsonName,
-      booleans
-    );
-  }
+  // jsonName: string = '';
+  // addSeats(index: number, booleans: boolean[]) {
+  //   this.jsonName = index.toString() + '.json'
+  //   return this.http.put(
+  //     'https://movietheaterdatabase-default-rtdb.firebaseio.com/ '+ this.jsonName,
+  //     booleans
+  //   );
+  // }
 
 }

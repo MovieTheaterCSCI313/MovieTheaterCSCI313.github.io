@@ -1,5 +1,5 @@
 export interface Seat{
-    row: number;
+    row: any;
     seatNumber: number;
     available: boolean;
 }

@@ -11,8 +11,7 @@ export class CheckoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("Checkout Component");
-    console.log("recived " + this.seats.length + " values")
+    
   }
 
 }
