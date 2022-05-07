@@ -29,7 +29,7 @@ export class SeatSelectorComponent implements OnInit {
     //get array of booleans and overwite the seat array, from service
     this.fetchData(0);
     console.log( typeof this.seatsAvail[2] )
-    //this.seatAvailabilityCheck();
+    this.seatAvailabilityCheck();
   }
   fetchData(num: number) {
     this.dbSerrvice.getSeatAvailablity(num).subscribe((data) => {
@@ -81,7 +81,7 @@ export class SeatSelectorComponent implements OnInit {
   seatAvailabilityCheck(): void{
     //pass aray to db service
     for (let i = 0; i < this.seatList.length; i++){
-      this.seatList[i].available = this.seatsAvail[i];
+      this.seatList[i].available == this.seatsAvail[i];
     }
 
   }

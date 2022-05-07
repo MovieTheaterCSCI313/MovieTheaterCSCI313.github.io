@@ -3,7 +3,13 @@
 <h4>The showtime is {{showtime.date}} at {{showtime.time}}</h4>
 <mat-grid-list cols="6" rowHeight="1:1">
   <mat-grid-tile *ngFor="let seat of seatList">
-    <button [ngClass]="!seat.available ? 'test': ''" type="button" (click)="seatSelectionToggle(seat)">{{seat.row}} - {{seat.seatNumber}}</button>
+    <button 
+    
+    [ngClass]="!seat.available ? 'test': ''" 
+    type="button" 
+    (click)="seatSelectionToggle(seat)"
+    [disabled] = "!seat.available"
+    >{{seat.row}} - {{seat.seatNumber}}</button>
     
   </mat-grid-tile>
   
