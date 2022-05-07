@@ -21,8 +21,7 @@ export class DatabaseAccessService {
     this.tempJson = " " +id +".json"
     return this.http
       .get<boolean[]>(
-        'https://movietheaterdatabase-default-rtdb.firebaseio.com/' + this.tempJson
-      )
+        'https://movietheaterdatabase-default-rtdb.firebaseio.com/' + this.tempJson)
       .pipe(
         map((responseData) => {
           const boolArray: boolean[] = [];

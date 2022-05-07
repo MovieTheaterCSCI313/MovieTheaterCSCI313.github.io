@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { showtime } from 'src/showtime';
 import { ComponentsService } from '../components.service'; //Get component service
 import { DatabaseAccessService } from '../database-access.service';
@@ -11,7 +11,7 @@ import { Seats } from '../seats';
   templateUrl: './seat-selector.component.html',
   styleUrls: ['./seat-selector.component.css']
 })
-export class SeatSelectorComponent implements OnInit {
+export class SeatSelectorComponent implements OnInit, DoCheck {
   @Input() showtime!: showtime;
 
 
@@ -28,12 +28,17 @@ export class SeatSelectorComponent implements OnInit {
 
     //get array of booleans and overwite the seat array, from service
     this.fetchData(0);
-    console.log( typeof this.seatsAvail[2] )
+    
+  }
+  ngDoCheck(){
     this.seatAvailabilityCheck();
   }
+
+  
   fetchData(num: number) {
     this.dbSerrvice.getSeatAvailablity(num).subscribe((data) => {
       this.seatsAvail = data;
+      
     });
   }
 
@@ -76,12 +81,11 @@ export class SeatSelectorComponent implements OnInit {
  
 
 
-
-  //will return an array of seats availablility in order, needs implementation from service
+  tempBool!: boolean;
+  //
   seatAvailabilityCheck(): void{
-    //pass aray to db service
     for (let i = 0; i < this.seatList.length; i++){
-      this.seatList[i].available == this.seatsAvail[i];
+      this.seatList[i].available = this.seatsAvail[i]
     }
 
   }
