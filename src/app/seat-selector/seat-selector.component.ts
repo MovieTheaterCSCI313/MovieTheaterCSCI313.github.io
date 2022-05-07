@@ -49,11 +49,11 @@ export class SeatSelectorComponent implements OnInit, DoCheck {
 
   //temp storage for seat selection
   seatSelection: Seat[] = [];
-  //adds seat to seatSelection array ---untested
+  //adds seat to seatSelection array 
   selectSeat(seat: Seat): void{
     this.seatSelection.push(seat);
   }
-  //removes seat from seatSelection array ---untested
+  //removes seat from seatSelection array
   deselectSeat(seat: Seat): void {
     for(let i = 0; i < this.seatSelection.length; i++) {
       

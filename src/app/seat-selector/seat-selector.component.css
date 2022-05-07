@@ -1,13 +1,31 @@
-
+.screen{
+    border: black solid 2px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: auto;
+    margin-bottom: 2%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    text-align: center;
+}
 #seatGrid {
     width: 50%;
-    border: black solid 10px;
+    border: rgb(78, 69, 69) solid 2px;
+    float: left;
+    margin: 5%;
+}
+.mat-grid-list{
+    margin-top: 10%;
+    width: 90%;
+    align-items: center;
+    left: 5%;
+    right: 5%;
+    
 }
 .mat-grid-tile {
-    color: red;
-    background-color: rgb(140, 235, 140);
-    border: black dashed 2px;
-    padding: 10px;
+    color: rgb(7, 7, 7);
+    background-color: white;
+    
 }
 
 .test{
@@ -17,4 +35,14 @@
 }
 ul{
     display: inline;
+}
+button {
+    padding: 10%;
+    background-color: white;
+}
+.buttonTrue{
+
+}
+.buttonFalse{
+
 }
