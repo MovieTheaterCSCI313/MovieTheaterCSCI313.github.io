@@ -19,12 +19,13 @@
 <br>
 
 
-<div *ngIf="seatSelection.length != 0">
+<div *ngIf="seatSelection.length != 0" fixLayout="row">
   <h3>Current Selection: </h3>
-  <p *ngFor="let s of seatSelection">
-    {{s.row}} {{s.seatNumber}}
-  </p>
+  <ul *ngFor="let s of seatSelection">
+    <li style="display:inline">{{s.row}} {{s.seatNumber}}</li>
+  </ul>
 </div>
+
 <!-- Delte this, testing purposes only -->
 <div *ngFor="let b of seatList">
   Test
