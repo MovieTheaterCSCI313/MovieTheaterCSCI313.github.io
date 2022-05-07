@@ -13,4 +13,8 @@
 .test{
     color: blue;
     font-style: italic;
+
+}
+ul{
+    display: inline;
 }

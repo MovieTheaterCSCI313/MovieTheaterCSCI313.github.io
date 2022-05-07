@@ -3,7 +3,13 @@
 <h4>The showtime is {{showtime.date}} at {{showtime.time}}</h4>
 <mat-grid-list cols="6" rowHeight="1:1">
   <mat-grid-tile *ngFor="let seat of seatList">
-    <button [ngClass]="!seat.available ? 'test': ''" type="button" (click)="seatSelectionToggle(seat)">{{seat.row}} - {{seat.seatNumber}}</button>
+    <button 
+    
+    [ngClass]="!seat.available ? 'test': ''" 
+    type="button" 
+    (click)="seatSelectionToggle(seat)"
+    [disabled] = "!seat.available"
+    >{{seat.row}} - {{seat.seatNumber}}</button>
     
   </mat-grid-tile>
   
@@ -13,12 +19,14 @@
 <br>
 
 
-<div *ngIf="seatSelection.length != 0">
+<div *ngIf="seatSelection.length != 0" fixLayout="row">
   <h3>Current Selection: </h3>
-  <p *ngFor="let s of seatSelection">
-    {{s.row}} {{s.seatNumber}}
-  </p>
+  <ul *ngFor="let s of seatSelection">
+    <li style="display:inline">{{s.row}} {{s.seatNumber}}</li>
+  </ul>
 </div>
+
+<!-- Delte this, testing purposes only -->
 <div *ngFor="let b of seatList">
   Test
   {{b.available}}
