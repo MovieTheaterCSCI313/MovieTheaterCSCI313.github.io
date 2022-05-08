@@ -20,13 +20,6 @@
 <br>
 
 
-<div *ngIf="seatSelection.length != 0" fixLayout="row">
-  <h3>Current Selection: </h3>
-  <ul *ngFor="let s of seatSelection">
-    <li style="display:inline">{{s.row}} {{s.seatNumber}}</li>
-  </ul>
-</div>
-
 <div>
     <button (click)="toggleView('checkout')">Continue to Checkout</button>
 </div>
