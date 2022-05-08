@@ -1,11 +1,8 @@
-<p>main-page works!</p>
-<app-nav-bar></app-nav-bar>
+
 <div>
-    <button (click)="showMoviesTest()">Show Movies</button>
-</div>
-<div *ngIf = showList>
+    Upcoming Movies:
     <app-movie-card
-        *ngFor = "let mov of MoviesList;"
+        *ngFor = "let mov of MoviesDisplay;"
         [mov] = "mov"
         (click) = "toggleView('movieDetails', mov)"
     ></app-movie-card>
