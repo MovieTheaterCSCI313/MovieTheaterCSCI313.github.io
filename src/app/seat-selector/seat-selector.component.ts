@@ -80,7 +80,9 @@ export class SeatSelectorComponent implements OnInit, DoCheck {
     this.seatSelection = [];
   }
  
-
+  selected(seatToCheck: Seat){
+    return this.seatSelection.includes(seatToCheck)
+  }
 
   tempBool!: boolean;
   //
