@@ -19,11 +19,13 @@ export class CheckoutComponent implements OnInit {
   constructor(private dbSerrvice: DatabaseAccessService, private comSerrvice: ComponentsService) { }
   
   showTimeId!: number;
-  
+  price: number=0;
   ngOnInit(): void {
     this.showTimeId = showTimes.indexOf(this.showTime);
     console.log(this.showTimeId)
     this.allSeats = Seats;
+    //$5 per seat
+    this.price = this.seats.length * 5
   }
   
   buySeats(){
