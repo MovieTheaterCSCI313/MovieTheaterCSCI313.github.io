@@ -4,11 +4,9 @@
 <br>
 <h4 class="screen">Screen</h4>
 <mat-grid-list cols="6" rowHeight="1:1">
-  <mat-grid-tile *ngFor="let seat of seatList">
+  <mat-grid-tile *ngFor="let seat of seatList" >
     <button 
 
-    
-    [ngClass]="seat.available ? 'available': 'unavailable'" 
     type="button" 
     (click)="seatSelectionToggle(seat)"
     [disabled] = "!seat.available"
@@ -27,6 +25,7 @@
   <ul *ngFor="let s of seatSelection">
     <li style="display:inline">{{s.row}} {{s.seatNumber}}</li>
   </ul>
+  <br>
 </div>
 
 
