@@ -1,4 +1,9 @@
 <h3>You bought the following seats: </h3>
 <div *ngFor="let i of seats">
-    {{i}}
+    {{allSeats[i].row}} {{allSeats[i].seatNumber}}
+</div>
+
+Test
+<div>
+    <button (click)="buySeats()">Confirm purchase</button>
 </div>

@@ -21,6 +21,7 @@ import { GreenGooComponent } from './green-goo/green-goo.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatTableModule,
     MatGridListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
