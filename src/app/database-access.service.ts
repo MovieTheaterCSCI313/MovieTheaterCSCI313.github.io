@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Movie} from './movie'
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { lastValueFrom } from 'rxjs';
 
 
 

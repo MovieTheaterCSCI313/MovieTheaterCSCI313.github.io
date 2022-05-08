@@ -7,7 +7,7 @@
   <mat-grid-tile *ngFor="let seat of seatList">
     <button 
     
-    [ngClass]="!seat.available ? 'test': ''" 
+    [ngClass]="seat.available ? 'available': 'unavailable'" 
     type="button" 
     (click)="seatSelectionToggle(seat)"
     [disabled] = "!seat.available"

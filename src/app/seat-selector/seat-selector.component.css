@@ -29,8 +29,6 @@
 }
 
 .test{
-    color: blue;
-    font-style: italic;
 
 }
 ul{
@@ -40,9 +38,14 @@ button {
     padding: 10%;
     background-color: white;
 }
-.buttonTrue{
-
+.unavailable{
+    color: black;
+    font-style: italic;
+    background-color: red;
 }
-.buttonFalse{
-
+.available{
+    color: white;
+    
+    font-weight: bolder;
+    background-color: green;
 }
