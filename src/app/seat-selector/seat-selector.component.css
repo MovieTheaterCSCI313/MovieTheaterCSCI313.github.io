@@ -51,3 +51,6 @@ button:hover:enabled{
     border:double;   
     font-style: italic; 
 }
+strong{
+    color: blue;
+}

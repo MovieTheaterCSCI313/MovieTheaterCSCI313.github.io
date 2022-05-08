@@ -6,7 +6,7 @@ import { DatabaseAccessService } from '../database-access.service';
 import { Seat } from '../seat';
 import { Seats } from '../seats';
 import { showTimes } from '../data/showtimes';
-
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-seat-selector',
@@ -17,7 +17,7 @@ export class SeatSelectorComponent implements OnInit, DoCheck {
   @Input() showtime!: showtime;
 
 
-
+  movieArr: Movie[] =[];
   constructor( 
     private comSerrvice: ComponentsService ,
     private dbSerrvice: DatabaseAccessService
@@ -27,10 +27,14 @@ export class SeatSelectorComponent implements OnInit, DoCheck {
   seatsAvail: boolean[] = [];
   
   tempNum!: number;
+  currentMov!: Movie;
   ngOnInit(){
+    this.movieArr = this.comSerrvice.getMovies();
     this.tempNum = showTimes.indexOf(this.showtime)
     //get array of booleans and overwite the seat array, from service
     this.fetchData(this.tempNum);
+    this.currentMov = this.movieArr[showTimes[this.tempNum].movieID]
+
   }
   ngDoCheck(){
     this.seatAvailabilityCheck();
