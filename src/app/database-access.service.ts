@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import {Movie} from './movie'
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { lastValueFrom } from 'rxjs';
+
+
 
 
 @Injectable({
@@ -18,7 +21,8 @@ export class DatabaseAccessService {
   //False = Unavailable.
   tempJson: string = '';
   getSeatAvailablity(id: number) {
-    this.tempJson = " " +id +".json"
+    this.tempJson = " " +id +".json";
+
     return this.http
       .get<boolean[]>(
         'https://movietheaterdatabase-default-rtdb.firebaseio.com/' + this.tempJson)
@@ -26,28 +30,24 @@ export class DatabaseAccessService {
         map((responseData) => {
           const boolArray: boolean[] = [];
           for (const key in responseData) {
-            boolArray.push(responseData[key]);
+            boolArray.push(responseData[key] == true);
           }
           return boolArray;
         })
-      );
+      ) 
   }
 
-  getStudents() {
-    return this.http
-      .get<any[]>(
-        'https://studentdataclass-default-rtdb.firebaseio.com/' + 'student.json'
-      )
-      .pipe(
-        map((responseData) => {
-          const studentArray: any[] = [];
-          for (const key in responseData) {
-            studentArray.push(responseData[key]);
-          }
-          return studentArray;
-        })
-      );
+
+  updateSeatAvailability(showtimeID: number, idd: number){
+    
+    this.tempJson = " " + showtimeID +".json";
+    return this.http.patch('https://movietheaterdatabase-default-rtdb.firebaseio.com/' + this.tempJson , 
+    {
+      [idd]: false,      
+    } );
+    
   }
+
 
 
 

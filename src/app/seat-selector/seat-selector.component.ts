@@ -5,6 +5,8 @@ import { ComponentsService } from '../components.service'; //Get component servi
 import { DatabaseAccessService } from '../database-access.service';
 import { Seat } from '../seat';
 import { Seats } from '../seats';
+import { showTimes } from '../data/showtimes';
+
 
 @Component({
   selector: 'app-seat-selector',
@@ -23,12 +25,12 @@ export class SeatSelectorComponent implements OnInit, DoCheck {
     ) { }
     
   seatsAvail: boolean[] = [];
-
-  ngOnInit(): void {
-
+  
+  tempNum!: number;
+  ngOnInit(){
+    this.tempNum = showTimes.indexOf(this.showtime)
     //get array of booleans and overwite the seat array, from service
-    this.fetchData(0);
-    
+    this.fetchData(this.tempNum);
   }
   ngDoCheck(){
     this.seatAvailabilityCheck();
@@ -38,7 +40,6 @@ export class SeatSelectorComponent implements OnInit, DoCheck {
   fetchData(num: number) {
     this.dbSerrvice.getSeatAvailablity(num).subscribe((data) => {
       this.seatsAvail = data;
-      
     });
   }
 
