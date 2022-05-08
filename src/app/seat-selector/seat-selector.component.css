@@ -28,21 +28,21 @@
     
 }
 
-.test{
-    color: blue;
-    font-style: italic;
-
-}
 ul{
     display: inline;
 }
 button {
     padding: 10%;
     background-color: white;
+    color: black;
 }
-.buttonTrue{
-
+button:disabled{
+    background-color: rgb(250, 95, 95);
 }
-.buttonFalse{
-
+button:enabled{
+    background-color: azure;
+}
+button:hover:enabled{
+    background-color: rgb(127, 255, 155);
+    margin-left: +20px;
 }
