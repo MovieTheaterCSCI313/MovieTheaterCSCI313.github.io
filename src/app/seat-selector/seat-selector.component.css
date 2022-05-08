@@ -45,4 +45,14 @@ button:enabled{
 button:hover:enabled{
     background-color: rgb(127, 255, 155);
     margin-left: +20px;
+.unavailable{
+    color: black;
+    font-style: italic;
+    background-color: red;
+}
+.available{
+    color: white;
+    
+    font-weight: bolder;
+    background-color: green;
 }
