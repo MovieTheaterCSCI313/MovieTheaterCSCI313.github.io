@@ -1,31 +1,45 @@
-<button (click)="filter()">Apply Filters</button> 
+
 <div class="parent">
     
     <div class="filters">
+        Filter By Movie Name: 
+        <label for="mSearch"></label>
+        <input type="text" id="mSearch" placeholder="Search by Title" [(ngModel)]="titleSearch" (input)="filter()">
         <ul style="list-style: none;">
             <li>
-                Filter By Title:
                 <ul>
                     <li> 
-                        <label for="mSearch">Movie Name: </label>
-                        <input type="text" id="mSearch" placeholder="Search by Title" [(ngModel)]="titleSearch" (input)="filter()">
+                        
+                        <button (click)="filter()">Apply Additional Filters</button> 
                     </li>
                 </ul>
             </li>
             <li>
                 Filter by Genre: 
                 <ul>
-                    <li><input type="checkbox" id="genre1" name="genre1" value="Aaction" click="filter()">
+                    <li><input type="checkbox" id="genre1" name="genre1" value="Action" [(ngModel)]="isGenreAction" >
                     <label for="genre1">Action</label>    </li>
-                    <li><input type="checkbox" id="genre4" name="genre4" value="Adventure">
-                    <label for="genre4">Action</label>    </li>
-                    <li><input type="checkbox" id="genre2" name="genre2" value="Sci-fi">
+                    <li><input type="checkbox" id="genre4" name="genre4" value="Adventure" [(ngModel)]="isGenreAdventure">
+                    <label for="genre4">Adventure</label>    </li>
+                    <li><input type="checkbox" id="genre2" name="genre2" value="Sci-fi" [(ngModel)]="isGenreSciFi">
                     <label for="genre2">Sci-fi</label> </li>
-                    <li><input type="checkbox" id="genre3" name="genre3" value="Comdedy">
+                    <li><input type="checkbox" id="genre3" name="genre3" value="Comedy" [(ngModel)]="isGenreComedy">
                     <label for="genre3">Comedy</label> </li>
                 </ul>
             </li>
-
+            <li>
+                Filter by Genre: 
+                <ul>
+                    <li><input type="radio" id="rating0" name="rating" value="" [(ngModel)]="selectedRating" >
+                        <label for="rating0">ANY</label>    </li>
+                    <li><input type="radio" id="rating1" name="rating" value="PG-13" [(ngModel)]="selectedRating" >
+                    <label for="rating1">PG-13</label>    </li>
+                    <li><input type="radio" id="rating2" name="rating" value="PG" [(ngModel)]="selectedRating">
+                    <label for="rating2">PG</label>    </li>
+                    <li><input type="radio" id="rating3" name="rating" value="M" [(ngModel)]="selectedRating">
+                    <label for="rating3">M</label> </li>
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="movieResults">

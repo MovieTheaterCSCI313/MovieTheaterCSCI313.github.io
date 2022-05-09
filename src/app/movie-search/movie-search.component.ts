@@ -14,22 +14,50 @@ export class MovieSearchComponent implements OnInit {
   allMovies: Movie[] = [];
   movieResults: Movie[] = [];
 
+  //keeps track of checkbox values:
+  //for genre
+  isGenreAction: boolean = false;
+  isGenreAdventure: boolean = false;
+  isGenreSciFi: boolean = false;
+  isGenreComedy: boolean = false;
+  //for rating
+  selectedRating: string = '';
+
   ngOnInit(): void {
     this.allMovies = this.comSerr.getMovies();
     this.movieResults = this.allMovies;
     //result = this.str.filter(s => s.includes('val'));
 
   }
-  filter(){
+  filter(genre?: string){
     if (this.titleSearch == ''){
       this.movieResults = this.allMovies;
     }
-    else if (this.titleSearch != ''){
-      console.log("Checking if " + this.titleSearch)
+    else{
       // this.movieResults = this.movieResults.filter(s => s.name.includes('val'))
       this.movieResults = this.allMovies.filter(s => s.name.toLowerCase().includes(this.titleSearch.toLowerCase()))
     }
 
+    //filter by rating
+    if (this.selectedRating == ''){
+      //do nothing
+    }else {
+      this.movieResults = this.movieResults.filter(s => s.rating == this.selectedRating)
+    }
+
+    //Filter by Genre
+    if (this.isGenreAction){
+      this.movieResults = this.movieResults.filter(s => s.genre.toLowerCase().includes('action'))
+    }
+    if (this.isGenreAdventure){
+      this.movieResults = this.movieResults.filter(s => s.genre.toLowerCase().includes('adventure'))
+    }
+    if (this.isGenreSciFi){
+      this.movieResults = this.movieResults.filter(s => s.genre.toLowerCase().includes('sci'))
+    }
+    if (this.isGenreComedy){
+      this.movieResults = this.movieResults.filter(s => s.genre.toLowerCase().includes('come'))
+    }
   }
 
 
