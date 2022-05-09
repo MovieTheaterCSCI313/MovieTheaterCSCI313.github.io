@@ -1,2 +1,37 @@
-<p>movie-search works!</p>
-<app-searchbar></app-searchbar>
+<button (click)="filter()">Apply Filters</button> 
+<div class="parent">
+    
+    <div class="filters">
+        <ul style="list-style: none;">
+            <li>
+                Filter By Title:
+                <ul>
+                    <li> 
+                        <label for="mSearch">Movie Name: </label>
+                        <input type="text" id="mSearch" placeholder="Search by Title">
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Filter by Genre: 
+                <ul>
+                    <li><input type="checkbox" id="genre1" name="genre1" value="Aaction">
+                    <label for="genre1">Action</label>    </li>
+                    <li><input type="checkbox" id="genre4" name="genre4" value="Adventure">
+                    <label for="genre4">Action</label>    </li>
+                    <li><input type="checkbox" id="genre2" name="genre2" value="Sci-fi">
+                    <label for="genre2">Sci-fi</label> </li>
+                    <li><input type="checkbox" id="genre3" name="genre3" value="Comdedy">
+                    <label for="genre3">Comedy</label> </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <div class="movieResults">
+        <app-movie-card *ngFor="let mov of movieResults" [mov] = "mov" (click) = "toggleView('movieDetails', mov)" ></app-movie-card>
+
+    </div>
+
+
+</div>

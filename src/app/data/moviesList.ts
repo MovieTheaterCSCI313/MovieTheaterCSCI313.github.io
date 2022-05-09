@@ -2,7 +2,7 @@ import { Movie } from "../movie";
 export const movies: Movie[] =[
         {
             name: "Spider-Man: No Home",
-            genre: "action",
+            genre: "Action",
             rating: "PG",
             description: "Spider man who has spider powers does spider things. Wow",
             imageSrc: "/assets/images/SpoodermanNoHome.jpg"
@@ -16,7 +16,7 @@ export const movies: Movie[] =[
         },
         {
             name : "Sanic",
-            genre: "Action/Comdedy",
+            genre: "Action/Comedy",
             rating: "PG",
             description: "He is the fast blue hedge boi. He consumes the CHILI DOG",
             imageSrc: "/assets/images/Sanic.jpg"

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ComponentsService } from '../components.service';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-movie-search',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieSearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private comSerrvice: ComponentsService) { }
+
+  movieResults: Movie[] = [];
 
   ngOnInit(): void {
+    this.movieResults = this.comSerrvice.getMovies()
+  }
+  filter(){
+    
+  }
+
+  toggleView(newView: string, movie: Movie){
+    this.comSerrvice.changeCurrentView(newView, movie)
   }
 
 }
