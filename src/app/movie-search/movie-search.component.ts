@@ -9,19 +9,33 @@ import { Movie } from '../movie';
 })
 export class MovieSearchComponent implements OnInit {
 
-  constructor(private comSerrvice: ComponentsService) { }
-
+  constructor(private comSerr: ComponentsService) { }
+  titleSearch: string = '';
+  allMovies: Movie[] = [];
   movieResults: Movie[] = [];
 
   ngOnInit(): void {
-    this.movieResults = this.comSerrvice.getMovies()
+    this.allMovies = this.comSerr.getMovies();
+    this.movieResults = this.allMovies;
+    //result = this.str.filter(s => s.includes('val'));
+
   }
   filter(){
-    
+    if (this.titleSearch == ''){
+      this.movieResults = this.allMovies;
+    }
+    else if (this.titleSearch != ''){
+      console.log("Checking if " + this.titleSearch)
+      // this.movieResults = this.movieResults.filter(s => s.name.includes('val'))
+      this.movieResults = this.allMovies.filter(s => s.name.toLowerCase().includes(this.titleSearch.toLowerCase()))
+    }
+
   }
 
+
+
   toggleView(newView: string, movie: Movie){
-    this.comSerrvice.changeCurrentView(newView, movie)
+    this.comSerr.changeCurrentView(newView, movie)
   }
 
 }

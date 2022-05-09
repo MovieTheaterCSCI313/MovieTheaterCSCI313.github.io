@@ -8,14 +8,14 @@
                 <ul>
                     <li> 
                         <label for="mSearch">Movie Name: </label>
-                        <input type="text" id="mSearch" placeholder="Search by Title">
+                        <input type="text" id="mSearch" placeholder="Search by Title" [(ngModel)]="titleSearch" (input)="filter()">
                     </li>
                 </ul>
             </li>
             <li>
                 Filter by Genre: 
                 <ul>
-                    <li><input type="checkbox" id="genre1" name="genre1" value="Aaction">
+                    <li><input type="checkbox" id="genre1" name="genre1" value="Aaction" click="filter()">
                     <label for="genre1">Action</label>    </li>
                     <li><input type="checkbox" id="genre4" name="genre4" value="Adventure">
                     <label for="genre4">Action</label>    </li>

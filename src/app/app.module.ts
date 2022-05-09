@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TheaterComponent } from './theater/theater.component';
@@ -43,7 +44,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatTableModule,
     MatGridListModule,
-
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
