@@ -1,9 +1,19 @@
 
-<div>
+<!-- <div>
     Upcoming Movies:
     <app-movie-card
         *ngFor = "let mov of MoviesDisplay;"
         [mov] = "mov"
         (click) = "toggleView('movieDetails', mov)"
     ></app-movie-card>
+</div> -->
+<h2>Playing Soon:</h2>
+<div class="horizontal">
+    <ng-container *ngFor="let mov of MoviesDisplay">
+        <app-movie-card
+        [mov] = "mov"
+        (click) = "toggleView('movieDetails', mov)"
+    ></app-movie-card>
+
+    </ng-container>
 </div>

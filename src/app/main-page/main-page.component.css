@@ -1,0 +1,20 @@
+/* ul {
+    display: flex;
+    
+}
+  
+li {
+    display: flex;
+    
+    border: 1px solid black;
+    
+} */
+.horizontal {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+h2{
+    justify-content: center;
+    text-align: center;
+}
