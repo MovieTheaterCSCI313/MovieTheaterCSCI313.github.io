@@ -34,13 +34,16 @@ export class TheaterComponent implements OnInit {
     this.comSerrvice.showTimeChange.subscribe(value => this.importantShowtime = value);
      
     this.comSerrvice.seatsChange.subscribe(value => this.seatsArray = value);
+    
+    this.showTimesArray = this.comSerrvice.getShowTimes();
+
 
     //Delete this for loop later
 
-    for (let i =0; i < 25; i ++){
-      this.emptySeats.push(this.tempBool);
-    }
-    this.showTimesArray = this.comSerrvice.getShowTimes();
+    // for (let i =0; i <= 25; i ++){
+    //   this.emptySeats.push(this.tempBool);
+    // }
+    
   
   }
 
@@ -53,10 +56,10 @@ export class TheaterComponent implements OnInit {
 
 
 
-  //Create array of 25 boolean values //(number of seats in theather.)
-  emptySeats: boolean[] = [];
+  //Create array of 25 boolean values //(number of seats in theather.
   showTimesArray: any[] = [];
 
+  // emptySeats: boolean[] = [];
   // tempMakeDatabase(){
   //   for (let i = 0; i < this.showTimesArray.length; i ++){
   //     this.dataSerrvice.addSeats(i, this.emptySeats).subscribe();
