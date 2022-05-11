@@ -8,7 +8,6 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SeatSelectorComponent } from './seat-selector/seat-selector.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -17,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatCardModule} from '@angular/material/card';
-import { GreenGooComponent } from './green-goo/green-goo.component';
 
 import { MatTableModule } from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -31,11 +29,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MainPageComponent,
     NavBarComponent,
     MovieSearchComponent,
-    SearchbarComponent,
     MovieDetailsComponent,
     SeatSelectorComponent,
     CheckoutComponent,
-    GreenGooComponent,
   ],
   imports: [
     BrowserModule,
