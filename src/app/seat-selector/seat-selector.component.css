@@ -45,6 +45,7 @@ button:enabled{
 button:hover:enabled{
     background-color: rgb(127, 255, 155);
     margin-left: +20px;
+    cursor:pointer;
 }
 button:enabled.testing{
     text-decoration:underline, overline, dotted;
