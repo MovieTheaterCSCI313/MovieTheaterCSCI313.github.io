@@ -36,3 +36,9 @@ span{
 h3{
     font-weight: normal;
 }
+
+.showtimelink:hover{
+    text-decoration: underline;
+    cursor:pointer;
+    color:#1a0dab;
+}

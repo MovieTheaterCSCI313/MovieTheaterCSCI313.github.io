@@ -17,6 +17,7 @@
 </mat-card>
 </div>
 <h2>The following showtimes are available:</h2>
-<p *ngFor= "let sTime of correctShowtimes" (click)="toggleView('seatSelector', sTime)">{{sTime.time}} on {{sTime.date}}</p>
 
-
+<ul>
+    <li class="showtimelink" *ngFor= "let sTime of correctShowtimes" (click)="toggleView('seatSelector', sTime)">{{sTime.time}} on {{sTime.date}}</li>
+</ul>
