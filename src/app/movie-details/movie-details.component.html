@@ -1,23 +1,41 @@
 <div class="mainDiv">
-<mat-card class="card">
-    <mat-card-header>
-        <mat-card-title>{{movieToShow.name}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <img class="img-float" src={{movieToShow.imageSrc}} >
-        <h3>
-        
-        <span> Genre: </span> <br>{{movieToShow.genre}}
-        <br><br><br>
-        <span>Rating: </span> <br>{{movieToShow.rating}}
-        <br><br><br>
-        <span>Description: </span> <br>{{movieToShow.description}}
-        </h3>
-    </mat-card-content>
-</mat-card>
-</div>
-<h2>The following {{ correctShowtimes.length }} showtimes are available:</h2>
 
-<ul>
-    <li class="showtimelink" *ngFor= "let sTime of correctShowtimes" (click)="toggleView('seatSelector', sTime)">{{sTime.time}} on {{sTime.date}}</li>
-</ul>
+    
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top img-fluid w-100" src={{movieToShow.imageSrc}} alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{movieToShow.name}}</h5>
+
+            <div class="row">
+              <div class="col-sm">
+                <span> Genre: </span>{{movieToShow.genre}}
+              </div>
+              <div class="col-sm">
+                <span> Rating: </span>{{movieToShow.rating}}
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm mt-3">
+                    <span> Description: </span>{{movieToShow.description}}
+                  </div>
+            </div>
+            
+        </div>
+        
+      </div>
+   
+      <div class="row">
+        <div class="col-sm mt-3">
+          <h2>The following {{ correctShowtimes.length }} showtimes are available:</h2>
+          <ul>
+            <li class="showtimelink" *ngFor= "let sTime of correctShowtimes" (click)="toggleView('seatSelector', sTime)">{{sTime.time}} on {{sTime.date}}</li>
+        </ul>
+          </div>
+    </div>
+      
+
+
+
+
+
+</div>
