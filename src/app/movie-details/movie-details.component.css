@@ -4,9 +4,13 @@
     border-radius: 45px;
     justify-content: space-around;
   } */
-.mainDiv{
-    margin:0px;
+
+  @media (max-width: 978px) {
+    .mainDiv {
+      margin:0;
+    }
 }
+
 mat-card-title{
     font-weight: bold;
 }
